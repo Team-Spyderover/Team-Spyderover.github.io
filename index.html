@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://use.fontawesome.com/c6201311d1.js"></script>
+    <title>Spyderover</title>
+</head>
+<body style="background-color: #1F2833;">
+    <!-- Dropdown Structure -->
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper teal">
+          <a href="#!" class="brand-logo">&nbsp; SPYDERoVER &#128016;</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#problem-statement">Problem Statement</a></li>
+            <li><a href="#solution">Proposed Solution</a></li>
+            <li><a href="#components">Components</a></li>
+            <li><a href="#challenges">Challenges</a></li>
+            <li><a href="#development">Development</a></li>
+            <li><a href="#code">Code</a></li>
+            <li><a href="https://github.com/Team-Spyderover/Final_Project_Report/blob/main/Project_Code.md"><i class="fa fa-github" aria-hidden="true" style="font-size: 30px;">&nbsp;</i><i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+            <li><a href="#demo">Final Demo</a></li>
+            <li><a href="#team">Team</a></li>
+          </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="section scrollspy" id="problem-statement">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center">
+                <h3 style="color: #66FCF1;">Problem Statement</h3>
+                <div class="col s12 center">
+                    <h5 style="color:white">The objective of this project is to build a prototyping platform, on top of a consumer hardware, using RP2040 based development boards and adapt it to be used in user defined test cases instead of its locked logic configuration. Additionally, the project was envisioned to incorporate higher computational capabilities than the ones it was designed for. This included, but not limited to, usage of Machine Learning algorithms to enable human interaction using tinyML capable boards. The goal was to hack into the blackbox of a simple wall climbing robot and use it's hardware in tandem with our boards to achieve some basic autonomous maneuvering.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section scrollspy" id="solution">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center">
+                <h3 style="color: #66FCF1;">Proposed Solution</h3>
+                <div class="col s12 center">
+                    <img src="media/Flowchart.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section scrollspy" id="components">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center"><span class="flow-text"><h3 style="color: #66FCF1;">Components</h3></span><br></div>
+            <div class="col s2 offset-s1">
+                <img src="media/RP2040_QtPy.JPG" alt="RP2040-QtPy" width="180" height="180">
+              <p class="flow-text" style="padding-left: 15px; color: white;">RP2040 QtPy</p>
+            </div>
+            <div class="col s2">
+                <img src="media/Pico4ML.jpg" alt="RP2040-Pico4ML" width="180" height="180">
+              <p class="flow-text" style="padding-left: 42px; color: white;">Pico4ML</p>
+            </div>
+            <div class="col s2">
+                <img src="media/ADXL335.JPG" alt="IMU-ADXL335" width="180" height="180">
+              <p class="flow-text" style="padding-left: 20px; color: white;">ADXL335 IMU</p>
+            </div>
+            <div class="col s2">
+                <img src="media/Controller.jpg" alt="RC-Controller" width="180" height="180">
+              <p class="flow-text" style="padding-left: 30px; color: white;">RC Remote Controller</p>
+            </div>
+            <div class="col s2">
+                <img src="media/DSC00492.JPG" alt="Gravity-Rover" width="200" height="180">
+              <p class="flow-text" style="padding-left: 20px; color: white;">Gravity-Rover</p>
+            </div>
+          </div>
+    </div>
+</div>
+ 
+<div class="section scrollspy" id="challenges">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center"><span class="flow-text"><h3 style="color: #66FCF1;">Challenges</h3></span></div>
+            <div class="col s12">
+              <ul class="tabs teal">
+                <li class="tab col s3"><a href="#test1"><span class="white-text"><h6>No Payload Capacity</h6></span></a></li>
+                <li class="tab col s3"><a href="#test2"><span class="white-text"><h6>Relative Positioning</h6></span></a></li></a></li>
+                <li class="tab col s3"><a href="#test3"><span class="white-text"><h6>Dual Mode Operation</h6></span></a></li></a></li>
+                <li class="tab col s3"><a href="#test4"><span class="white-text"><h6>Face Detection</h6></span></a></li></a></li>
+              </ul>
+            </div>
+            <div id="test1" class="col s12 center"><span class="flow-text" style="color: white;">RC car being utilised is equipped with an extremely light chasis to enable wall climbing feature. The drawback associated with this  is that the car is incapable of supporting any payload or sensors.</span></div>
+            <div id="test2" class="col s12 center"><span class="flow-text" style="color: white;">Since no sensors can mounted on the car , it was difficult to track the position of the car itself. Thus, an alternative approach was used  in which the IMU is mounted on the remote control. To effectively judge the direction of gesture being performed, the current position is stored in a temporary variable and based on the difference between new and old coordinates along a particular axis, the intended motion is judged.</span></div>
+            <div id="test3" class="col s12 center"><span class="flow-text" style="color: white;">The challenge is to develop dual mode of operation using the same microcontroller. The functionality was divided into 2 parts: control using laptop keyboard and through standalone gesture based RC remote control.</span></div>
+            <div id="test4" class="col s12 center"><span class="flow-text" style="color: white;">Human detecton based power on capability was one of the feature envisioned for the project. The objective is to use PICO4ML board's baked in face detection libraries to generate a toggle signal that is recieved by RP2040 Qtpy and start or stop functionlity.</span></div>
+          </div>
+    </div>
+</div>
+
+<div class="section scrollspy" id="development">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center"><span class="flow-text"><h3 style="color: #66FCF1;">Development and Implementation</h3></span></div>
+            <div class="col s12 center">
+                <ul class="collapsible">
+                    <li>
+                      <div class="collapsible-header teal"><i class="material-icons" style="color: white; font-size: 3rem;">keyboard_alt</i><span class="flow-text" style="color: white;">&nbsp; Keyboard Hijack</span></div>
+                      <div class="collapsible-body"><video class="responsive-video" controls>
+                        <source src="media/Keyboard_Hijack.mp4" type="video/mp4">
+                    </video>
+                    <br>
+                    <span class="white-text" style="font-size: medium;">To implement the functionality with keyboard, we estabilish the USB serial communication between laptop and RP2040 QtPy. The code uses the getchar() function to fetch for keypresses. The functions accepts the single character inputs. Based on the input, the code judges between 2 conditions ,forward or backwards and activate the corresponding pins on RP2040 which transfer state to RC circuitry. The pins are defined in the macros of the code. If backward motion is required, the RP2040 generates a negative potential on both the pins of RC circuitry to mimic button inputs. Similarly, a positive potential is generated for forward motion. The wires attached to the remote are color coded, with red for outer backward and inner backward wheel motion and white for outer forward and inner forward wheel motion. The circuit works on discrete values rather than ona range, thus speed control is not a feature of the original product as well as our implementation.<br></span>
+                    <br>
+                <img src="media/pinmap.jpg" width="640">
+                </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header teal"><i class="large material-icons" style="color: white; font-size: 3rem;">waving_hand</i><span class="flow-text" style="color: white;">&nbsp; Gesture Edition</span></div>
+                      <div class="collapsible-body"><video class="responsive-video" height="320" width="240" controls muted>
+                        <source src="media/Gesture_control.mp4" type="video/mp4">
+                    </video>
+                    <br>
+                    <span class="white-text" style="font-size: medium;">To implement gesture recognition  functionality, we use a 3- axis IMU and coordinate geometery. Intially to calibrate IMU and establish the origin, the sensor is held in one orientation. The values of the sensor is printed on the serial console. Next, many hand gestures are done to see the deviation in values of the axis given by the sensor. Based on these deviations, the conditions to recognise left, right, front and back conditions are determined in terms of positive and negative deviation. To implement the logic, first 3 temperory variables are declared and initialised to 0. At the start of the loop, current coordinates of the sensor is read. These are subtracted from the 3 temp variable for each axis which is 0 for first iteration. Now we have positive or negative deviation along each axis. These values are used to toggle specific pins on RP2040 which in turn sends the corresponding voltage potential to the RC circuitry and thus desired motion is achieved.</span>
+                    <br>
+                    <video class="responsive-video" width="640px" controls muted>
+                        <source src="media/XY-Pos.mp4" type="video/mp4">
+                    </video>                
+                </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header teal"><i class="large material-icons" style="color: white; font-size: 3rem;">person_search</i><span class="flow-text" style="color: white;">&nbsp; The Face Detector</span></div>
+                      <div class="collapsible-body"><video class="responsive-video" height="320" width="240" controls muted>
+                        <source src="media/Face_detection.mp4" type="video/mp4">
+                    </video>
+                    <br>
+                    <span class="white-text" style="font-size: medium;">To implement the ability for our system to detect a person, we used Pico4ML board which dons an onboard ArduCam camera module which is capable of taking 2 MP images. These images are fed to the RaspberryPi Pico, which serves as the heart of this board too, via SPI. This image is then converted to grayscale for lesser channels (As RGB has 3 channels) and fed to the TFLite model. The TFLite model for person detection is a portable, light weight version of the person detection model trained using TensorFlow 2 over a full-fledged dataset called the COCO dataset. The architecture is rather simple, consisting of convolutional layers with maxpooling and finally passed over 3 fully connected dense layers with ReLu activation. The TFLite conversion reduces the computation as it saves the weights and thus helps in enabling a low resource hardware to run such a heavy task. Upon detection of a person over a certain threshold, we generate a PIO out control signal from the Pico4ML board which signals the QtPy to enable the IMU and direct the car towards the intended target (here, the detected person).</span></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal"><i class="large material-icons" style="color: white; font-size: 3rem;">electric_car</i><span class="flow-text" style="color: white;">&nbsp; The Integrated System</span></div>
+                        <div class="collapsible-body"><video class="responsive-video" height="320" width="240" controls muted>
+                        <source src="media/Integrated_system.mp4" type="video/mp4">
+                        </video>
+                        <br>
+                        <span class="white-text" style="font-size: medium;">A demonstation of all the components working together.</span></div>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section scrollspy" id="code">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center"><span class="flow-text"><h3 style="color: #66FCF1;">The Code</h3></span></div>
+            <div class="col s12 center">
+                <ul class="collapsible">
+                    <li>
+                      <div class="collapsible-header teal"><i class="material-icons" style="font-size: 3rem; color: white;">code</i><span class="flow-text" style="color: white;">&nbsp;The Keyboard Control Code</span></div>
+                      <div class="collapsible-body"><script src="https://gist.github.com/prateekbashista/1924b155f66e279d82e4db1bc298faf8.js"></script></span></div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header teal"><i class="material-icons" style="font-size: 3rem; color: white;">code</i><span class="flow-text" style="color: white;">&nbsp;The Gesture Control Code</span></div>
+                      <div class="collapsible-body"><script src="https://gist.github.com/prateekbashista/807fab710b361bceec4a336787c8e460.js"></script></span></div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header teal"><i class="material-icons" style="font-size: 3rem; color: white;">code</i><span class="flow-text" style="color: white;">&nbsp;The Face Detection Code</span></div>
+                      <div class="collapsible-body"><script src="https://gist.github.com/prateekbashista/76121ccda2fb7eeea8ae4ab4182a21ef.js"></script></span></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal"><i class="material-icons" style="font-size: 3rem; color: white;">code</i><span class="flow-text" style="color: white;">&nbsp;The PIO Code</span></div>
+                        <div class="collapsible-body"><script src="https://gist.github.com/prateekbashista/25717c7484d11e3d2180bc5a25d58697.js"></script></span></div>
+                      </li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section scrollspy" id="demo">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center"><span class="flow-text"><h3 style="color: #66FCF1;">Final Product</h3></span></div>
+            <div class="col s6 center">
+                <img class="responsive-img" src="media/DSC00494.JPG" width="640">
+            </div>
+            <div class="col s6 center">
+                <video class="responsive-video" width="320" height="240" controls>
+                    <source src="media/WhatsApp Video 2022-12-24 at 6.37.11 PM.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col s6 center offset-s2">
+                <video class="responsive-video" height="320" width="240" controls muted>
+                    <source src="media/Integrated_system.mp4" type="video/mp4">
+                    </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section scrollspy" id="team">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center"><span class="flow-text"><h3 style="color: #66FCF1;">The Team</h3></span></div>
+            <div class="col s1 offset-s1">
+                <h4 style="color: white;">Prateek Bashista</h4>
+                <a href="https://github.com/prateekbashista" target="_blank" class="fa fa-github" style="font-size: 2rem;"></a> 
+                <a href="https://www.linkedin.com/in/prateek-bashista-27858216a/" target="_blank" class="fa fa-linkedin" style="font-size: 2rem; padding-left: 2px;"></a>
+                <a href="mailto:bashista@seas.upenn.edu?Subject=Hey%20I%20visited%20your%20website%20SpyderOver" target="_top" class="fa fa-google" style="font-size: 2rem; padding-left: 2px;"></a>
+            </div>
+            <div class="col s4 offset-s2">
+                <img class="responsive-img" src="media/WhatsApp Image 2022-12-24 at 9.43.53 PM.jpeg" width="480">
+            </div>
+            <div class="col s2 offset-s1">
+                <h4 style="color: white;">Joyendra Roy Biswas</h4>
+                <a href="https://github.com/joyendra" target="_blank" class="fa fa-github" style="font-size: 2rem;"></a> 
+                <a href="https://www.linkedin.com/in/joyendra-roy-biswas/" target="_blank" class="fa fa-linkedin" style="font-size: 2rem; padding-left: 2px;"></a>
+                <a href="mailto:joyendra@seas.upenn.edu?Subject=Hey%20I%20visited%20your%20website%20SpyderOver" target="_top" class="fa fa-google" style="font-size: 2rem; padding-left: 2px;"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="page-footer teal">
+    <div class="footer-copyright">
+        <div class="container center" style="font-weight: bold;">
+        © 2022 Copyright Team SPYDERoVER (University of Pennsylvania) 
+        <br>
+        <br>
+        <div>
+            <img src="media/Penn-Engineering-logo-white-web-4dl.png" width="280">
+        </div>
+        </div>
+      </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+<script>
+    $(document).ready(function(){
+    $('.tabs').tabs();
+    $('.scrollspy').scrollSpy();
+    $('.collapsible').collapsible();
+  });
+</script> 
+</body>
+</html>
