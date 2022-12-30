@@ -146,8 +146,23 @@
                     </li>
                     <li>
                         <div class="collapsible-header teal"><i class="large material-icons" style="color: white; font-size: 3rem;">electric_car</i><span class="flow-text" style="color: white;">&nbsp; The Integrated System</span></div>
-                        <div class="collapsible-body"><video class="responsive-video" height="320" width="240" controls muted>
-                        <source src="media/Integrated_system.mp4" type="video/mp4">
+                        <div class="collapsible-body">
+                            <span class="white-text" style="font-size: medium; text-align: justify;">The incoming_signal toggle coming from PICO4ML board is a blocking statement for the functionality of our RP2040 QtPy which controls the RC circuitry of the remote control. Thus, to free up the processor, this control signal is fetched through PIO instead of the normal GPIO and directly used in the program.
+                                <ol>
+                                    <li>
+                                        The in() function in pio_assembly fetches data from the specifeid pin in the main program and pusshes the data into the ISR 32 bits at time. Since, we are working in boolean input, we populate the entire register with same value.
+                                    </li>
+                                    <li>
+                                        Although the value of control is being used one, the data is being read continously incase user wants an active person detection ON/OFF functionality, meaning , the remote is on only for the time a face is bein detected.
+                                    </li>
+                                    <li>
+                                        There is also the C - helper function, which links our .pio file to the main C code.
+                                    </li>
+                                </ol>
+                                </span>
+                            <br>
+                        <video class="responsive-video" height="320" width="240" controls muted>
+                            <source src="media/Integrated_system.mp4" type="video/mp4">
                         </video>
                         <br>
                         <span class="white-text" style="font-size: medium;">A demonstation of all the components working together.</span></div>
@@ -170,7 +185,7 @@
                     </li>
                     <li>
                       <div class="collapsible-header teal"><i class="material-icons" style="font-size: 3rem; color: white;">code</i><span class="flow-text" style="color: white;">&nbsp;The Gesture Control Code</span></div>
-                      <div class="collapsible-body"><script src="https://gist.github.com/prateekbashista/807fab710b361bceec4a336787c8e460.js"></script></span></div>
+                      <div class="collapsible-body"><script src="https://gist.github.com/prateekbashista/3fa20d254e3dd6c2be7b67674b094fab.js"></script></span></div>
                     </li>
                     <li>
                       <div class="collapsible-header teal"><i class="material-icons" style="font-size: 3rem; color: white;">code</i><span class="flow-text" style="color: white;">&nbsp;The Face Detection Code</span></div>
